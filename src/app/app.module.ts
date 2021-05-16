@@ -7,12 +7,14 @@ import { PlanetaComponent } from './planeta/planeta.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { TecnologiaComponent } from './tecnologia/tecnologia.component';
+import { IndividuoComponent } from './individuo/individuo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PlanetaComponent,
-    TecnologiaComponent
+    TecnologiaComponent,
+    IndividuoComponent
   ],
   imports: [
     BrowserModule,

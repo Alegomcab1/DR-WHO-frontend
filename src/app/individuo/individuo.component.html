@@ -1,0 +1,24 @@
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Especie</th>
+            <th scope="col">Número de corazones</th>
+            <th scope="col">Organismo</th>
+            <th scope="col">Descripcion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let individuo of individuos">
+            <td>{{ individuo.nombre }}</td>
+            <td>{{ individuo.especie }}</td>
+            <td>{{ individuo.numCorazones }}</td>
+            <td>{{ individuo.organismo }}</td>
+            <td>{{ individuo.descripcion }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
