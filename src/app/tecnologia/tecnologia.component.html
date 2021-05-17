@@ -1,18 +1,23 @@
-<div class="card my-5">
-    <div class="card-body">
-      <table class="table table-bordered table-striped">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">Nombre</th>
-            <th scope="col">Descripcion</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let tecnologia of tecnologias">
-            <td>{{ tecnologia.nombre }}</td>
-            <td>{{ tecnologia.descripcion }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+<div class="card-body">
+  <div class="mb-3 drwho">Lista de tecnología</div>
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col"> </th>
+          <th scope="col"> </th>
+          <th scope="col"> </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tecnologia of tecnologias">
+          <td>{{ tecnologia.nombre }}</td>
+          <td>{{ tecnologia.descripcion }}</td>
+          <td><button class="button btn btn-primary" type="button">Detalles</button></td>
+          <td><button class="button btn btn-primary" type="button">Borrar</button></td>
+          <td><button class="button btn btn-primary" type="button">Actualizar</button></td>
+        </tr>
+      </tbody>
+    </table>
   </div>

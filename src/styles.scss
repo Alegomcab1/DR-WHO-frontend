@@ -4,18 +4,24 @@ body, html{
     padding: 0;
 }
 
-.image{
+.back-img{
+    position: fixed;
+    top: 0;
+    left: 0;
+
     height:100vh; 
-    background-size:cover; 
     width:100vw;
+
+    background-size:cover; 
     background-image:url('assets/5.jpg');
+
     background-position: center; 
-    color: white; 
 }
 
 .drwho{
     font-family: 'Doctor Who', sans-serif;
     font-size: xx-large;
+    color: white;
 }
 
 .sombra{
