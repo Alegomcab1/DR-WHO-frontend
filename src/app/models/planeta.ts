@@ -1,3 +1,5 @@
+import { FormBuilder } from "@angular/forms";
+
 export class Planeta {
     id: string;
     nombre: string;
@@ -8,5 +10,8 @@ export class Planeta {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
+        
       }
-}
+}      
+     
+

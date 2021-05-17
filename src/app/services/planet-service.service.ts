@@ -17,4 +17,16 @@ export class PlanetServiceService {
   public findAll(): Observable<Planeta[]> {
     return this.http.get<Planeta[]>(this.usersUrl + "/listPlaneta");
   }
+
+  public borraPlaneta(id: string): Observable<string> {
+    let data = {
+      "id": id
+    }
+    return this.http.post<string>(this.usersUrl + "/deletePlaneta", data);
+  }
+
+  public createPlaneta(form : any):Observable<string>{
+    return this.http.post<string>(this.usersUrl + "/createPlaneta", form);
+    
+  }
 }

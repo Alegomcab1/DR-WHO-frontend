@@ -1,18 +1,29 @@
-<div class="card my-5">
-    <div class="card-body">
-      <table class="table table-bordered table-striped">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">Nombre</th>
-            <th scope="col">Descripcion</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let planeta of planetas">
-            <td>{{ planeta.nombre }}</td>
-            <td>{{ planeta.descripcion }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+<div class="card-body image">
+  <div class="mb-3 drwho">Lista de planetas</div>
+  <table class="table table-bordered table-striped tabla">
+    <thead class="thead-dark ">
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col"> </th>
+        <th scope="col"> </th>
+        <th scope="col"> </th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr *ngFor="let planeta of planetas">
+        <td class="sombra">{{ planeta.nombre }}</td>
+        <td class="sombra">{{ planeta.descripcion }}</td>
+        <td><button class="button btn btn-primary" type="button">Detalles</button></td>
+        <td><button class="button btn btn-primary" type="button" (click)="borrarPlaneta(planeta.id)">Borrar</button></td>
+        <td><button class="button btn btn-primary" type="button" (click)="goTo('createPlaneta/'+ planeta.id)">Actualizar</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="btn btn-primary mr-4" type="button" (click)="goTo('createPlaneta')">Crear nuevo planeta</button>
+  <button class="btn btn-primary" type="button" (click)="goTo('')">Volver</button>
+</div>
+
+
+   
+    
