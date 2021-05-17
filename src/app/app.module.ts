@@ -10,14 +10,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { TecnologiaComponent } from './tecnologia/tecnologia.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { PlanetaFormComponent } from './planeta-form/planeta-form.component';
+import { IndividuoComponent } from './individuo/individuo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PlanetaComponent,
     TecnologiaComponent,
-    MainPageComponent,
-    PlanetaFormComponent
+    PlanetaFormComponent,
+    IndividuoComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,

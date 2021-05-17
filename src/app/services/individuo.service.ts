@@ -14,7 +14,7 @@ export class IndividuoService {
     this.usersUrl = 'http://localhost:8080';
   }
 
-  public findAll(): Observable<Individuo[]> {
-    return this.http.get<Individuo[]>(this.usersUrl + "/listIndividuo");
+  public buscaPorEspecie(especie: string): Observable<Individuo[]> {
+    return this.http.post<Individuo[]>(this.usersUrl + "/listEspecies", {"especie": especie});
   }
 }

@@ -1,12 +1,13 @@
 .a {
     position:absolute;
     border-radius:150px;
-    background-color:#0D1A4F;
+    background: linear-gradient(rgb(42,69,116), rgb(133, 119, 197));    
     width:20vh;
     height:20vh;
     left:85vw;
     top:40vh;
     cursor:pointer;
+    border: 2px solid white;
 
     transition-property: width, height, left, top;
     transition-duration: 0.5s;
@@ -22,12 +23,13 @@
 .b {
     position:absolute;
     border-radius:150px;
-    background-color:#0D1A4F;
+    background: linear-gradient(rgb(42,69,116), rgb(133, 119, 197));
     width:20vh;
     height:20vh;
     left:85%;
     top:70%;
     cursor:pointer;
+    border: 2px solid white;
 
     transition-property: width, height, left, top;
     transition-duration: 0.5s;
@@ -43,12 +45,13 @@
 .c {
     position:absolute;
     border-radius:150px;
-    background-color:#0D1A4F;
+    background: linear-gradient(rgb(42,69,116), rgb(133, 119, 197));
     width:20vh;
     height:20vh;
     left:75%;
     top:55%;                            
     cursor:pointer;
+    border: 2px solid white;
 
     transition-property: width, height, left, top;
     transition-duration: 0.5s;
