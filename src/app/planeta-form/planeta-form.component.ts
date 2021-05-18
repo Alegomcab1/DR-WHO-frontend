@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Planeta } from '../models/planeta';
 import { PlanetServiceService } from '../services/planet-service.service';
 
@@ -12,10 +12,27 @@ export class PlanetaFormComponent implements OnInit {
 
   public nombrePlaneta: string = "";
   public descripcionPlaneta: string = "";
+  public isUpdate: boolean = false;
+  public idPlaneta: string = "";
+  public planeta: Planeta = {
+    "id": "",
+    "nombre": "",
+    "descripcion": ""
+  };
 
-  constructor(private planetService : PlanetServiceService, private route : Router) { }
+  constructor(private planetService : PlanetServiceService, private route : Router, private activeRoute : ActivatedRoute) { }
 
   ngOnInit(): void {
+    if(this.activeRoute.snapshot.paramMap.has("id")){
+      this.isUpdate = true
+      this.idPlaneta = this.activeRoute.snapshot.paramMap.get("id") as string
+      
+      this.planetService.showPlaneta(this.idPlaneta).subscribe(data => {
+        this.planeta = data;
+        this.nombrePlaneta = this.planeta.nombre
+        this.descripcionPlaneta = this.planeta.descripcion
+      });
+    }
   }
 
   public goTo(path: string){
@@ -23,15 +40,29 @@ export class PlanetaFormComponent implements OnInit {
   }
 
   public sendForm(){
-    let data = {
-      "nombre": this.nombrePlaneta,
-      "descripcion": this.descripcionPlaneta
-    }
-    console.log(data)
+    
+    if(this.activeRoute.snapshot.paramMap.has("id")){
 
-    this.planetService.createPlaneta(data).subscribe(data => {
-      this.goTo("planeta")
-    });
+      let data = {
+        "id": this.idPlaneta,
+        "nombre": this.nombrePlaneta,
+        "descripcion": this.descripcionPlaneta
+      }
+      this.planetService.updatePlaneta(data).subscribe(data => {
+        this.goTo("planeta")
+      });
+    }else{
+
+      let data = {
+        "nombre": this.nombrePlaneta,
+        "descripcion": this.descripcionPlaneta
+      }
+      this.planetService.createPlaneta(data).subscribe(data => {
+        this.goTo("planeta")
+      });
+    }
+
+    
   }
 
 }
