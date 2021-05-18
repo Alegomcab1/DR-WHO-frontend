@@ -12,6 +12,12 @@ export class PlanetaComponent implements OnInit {
 
   public planetas : Planeta[] = []; 
   public respuestaBorrar : string = "";
+  public isShow: boolean = false;
+  public planet: Planeta = {
+    "id": "",
+    "nombre": "",
+    "descripcion": ""
+  }; 
 
   constructor(
     private planetService : PlanetServiceService,
@@ -28,10 +34,17 @@ export class PlanetaComponent implements OnInit {
     this.route.navigate(path.split("/"));
   }
 
-  public borrarPlaneta(id : string){
+  public borrarPlaneta(id: string){
     this.planetService.borraPlaneta(id).subscribe(data => {
       this.respuestaBorrar = data;
       this.planetas = this.planetas.filter(p => p.id != id)
+    });
+  }
+
+  public showPlaneta(id: string){
+    this.planetService.showPlaneta(id).subscribe(data => {
+      this.isShow = true;
+      this.planet = data;
     });
   }
 
