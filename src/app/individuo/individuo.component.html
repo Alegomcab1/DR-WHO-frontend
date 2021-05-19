@@ -17,9 +17,11 @@
           <td class="sombra">{{ individuo.numCorazones }}</td>
           <td class="sombra">{{ individuo.organismo }}</td>
           <td><button class="button btn btn-primary" type="button">Detalles</button></td>
-          <td><button class="button btn btn-primary" type="button">Borrar</button></td>
-          <td><button class="button btn btn-primary" type="button">Actualizar</button></td>
+          <td><button class="button btn btn-primary" type="button" (click)="borrarIndividuo(individuo.id)">Borrar</button></td>
+          <td><button class="button btn btn-primary" type="button" (click)="goTo('createIndividuo/'+ individuo.id)">Actualizar</button></td>
         </tr>
       </tbody>
     </table>
+    <button class="btn btn-primary mr-4" type="button" (click)="goTo('createIndividuo/' + especie)">Crear nuevo individuo</button>
+    <button class="btn btn-primary" type="button" (click)="goTo('')">Volver</button>
 </div>

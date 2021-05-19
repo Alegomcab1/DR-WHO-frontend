@@ -17,4 +17,16 @@ export class IndividuoService {
   public buscaPorEspecie(especie: string): Observable<Individuo[]> {
     return this.http.post<Individuo[]>(this.usersUrl + "/listEspecies", {"especie": especie});
   }
+
+  public borraIndividuo(id: string): Observable<string> {
+    let data = {
+      "id": id
+    }
+    return this.http.post<string>(this.usersUrl + "/deleteIndividuo", data);
+  }
+
+  public createIndividuo(form : any):Observable<string>{
+    return this.http.post<string>(this.usersUrl + "/createIndividuo", form);
+    
+  }
 }
