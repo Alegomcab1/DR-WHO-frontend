@@ -29,4 +29,16 @@ export class PlanetServiceService {
     return this.http.post<string>(this.usersUrl + "/createPlaneta", form);
     
   }
+
+  public showPlaneta(id: string):  Observable<Planeta>{
+    let data = {
+      "id": id
+    }
+    return this.http.post<Planeta>(this.usersUrl + "/showPlaneta", data);
+  }
+
+  public updatePlaneta(form : any){
+    
+    return this.http.post<Planeta>(this.usersUrl + "/updatePlaneta", form);
+  }
 }

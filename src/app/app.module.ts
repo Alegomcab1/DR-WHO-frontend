@@ -13,6 +13,7 @@ import { PlanetaFormComponent } from './planeta-form/planeta-form.component';
 import { IndividuoComponent } from './individuo/individuo.component';
 import { EspeciesComponent } from './especies/especies.component';
 import { IndividuoFormComponent } from './individuo-form/individuo-form.component';
+import { TecnologiaFormComponent } from './tecnologia-form/tecnologia-form.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { IndividuoFormComponent } from './individuo-form/individuo-form.componen
     IndividuoComponent,
     MainPageComponent,
     EspeciesComponent,
-    IndividuoFormComponent
+    IndividuoFormComponent,
+    TecnologiaFormComponent
   ],
   imports: [
     BrowserModule,

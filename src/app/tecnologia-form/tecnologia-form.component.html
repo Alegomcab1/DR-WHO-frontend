@@ -1,0 +1,22 @@
+<div class="image row-fluid">
+  
+    <div class="mb-3 col-4">
+        <div class="drwho">
+            Crear tecnologia
+        </div>
+    </div>
+
+    <div class="mb-3 col-4">
+        <label for="nombre" class="form-label">Nombre del tecnologia</label>
+        <input type="text" class="form-control" [(ngModel)]="nombreTecnologia">
+    </div>
+    <div class="mb-3 col-4">
+        <label for="description" class="form-label">Descripcion del tecnologia</label>
+        <textarea name="textarea" class="form-control" [(ngModel)]="descripcionTecnologia" rows="5" cols="20"></textarea>
+    </div>
+    <div class="col pb-2">
+        <button class="btn btn-primary mr-4" (click)="sendForm()">Crear</button>
+        <button class="btn btn-primary" type="button" (click)="goTo('tecnologia')">Volver a lista de tecnologias</button>
+    </div>
+
+</div>

@@ -1,6 +1,7 @@
-<div class="card-body">
-  <div class="mb-3 drwho">Lista de planetas</div>
-  <table class="table table-bordered table-striped tabla">
+<div  class="card-body">
+  <div *ngIf="!isShow" class="mb-3 drwho">Lista de planetas</div>
+  <div *ngIf="isShow" class="mb-3 drwho">Detalles del planeta</div>
+  <table *ngIf="!isShow" class="table table-bordered table-striped tabla">
     <thead class="thead-dark ">
       <tr>
         <th scope="col">Nombre</th>
@@ -14,14 +15,31 @@
       <tr *ngFor="let planeta of planetas">
         <td class="sombra">{{ planeta.nombre }}</td>
         <td class="sombra">{{ planeta.descripcion }}</td>
-        <td><button class="button btn btn-primary" type="button">Detalles</button></td>
+        <td><button class="button btn btn-primary" type="button" (click)="showPlaneta(planeta.id)">Detalles</button></td>
         <td><button class="button btn btn-primary" type="button" (click)="borrarPlaneta(planeta.id)">Borrar</button></td>
         <td><button class="button btn btn-primary" type="button" (click)="goTo('createPlaneta/'+ planeta.id)">Actualizar</button></td>
       </tr>
     </tbody>
   </table>
+  <table *ngIf="isShow" class="table table-bordered table-striped tabla">
+    <thead class="thead-dark ">
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Descripcion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="sombra">{{ planet.nombre }}</td>
+        <td class="sombra">{{ planet.descripcion }}</td>
+      </tr>
+    <tbody >
+  </table>
   <button class="btn btn-primary mr-4" type="button" (click)="goTo('createPlaneta')">Crear nuevo planeta</button>
-  <button class="btn btn-primary" type="button" (click)="goTo('')">Volver</button>
+  <button *ngIf="!isShow" class="btn btn-primary" type="button" (click)="goTo('')">Volver</button>
+  <button *ngIf="isShow" class="btn btn-primary" type="button" (click)="isShow = false">Volver</button>
+
+  
 </div>
 
 
