@@ -17,4 +17,28 @@ export class TecnologiaService {
   public findAll(): Observable<Tecnologia[]> {
     return this.http.get<Tecnologia[]>(this.usersUrl + "/listTecnologia");
   }
+
+  public borraTecnologia(id: string): Observable<string> {
+    let data = {
+      "id": id
+    }
+    return this.http.post<string>(this.usersUrl + "/deleteTecnologia", data);
+  }
+
+  public createTecnologia(form : any):Observable<string>{
+    return this.http.post<string>(this.usersUrl + "/createTecnologia", form);
+    
+  }
+
+  public showTecnologia(id: string):  Observable<Tecnologia>{
+    let data = {
+      "id": id
+    }
+    return this.http.post<Tecnologia>(this.usersUrl + "/showTecnologia", data);
+  }
+
+  public updateTecnologia(form : any){
+    
+    return this.http.post<Tecnologia>(this.usersUrl + "/updateTecnologia", form);
+  }
 }
