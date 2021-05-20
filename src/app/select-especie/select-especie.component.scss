@@ -1,0 +1,115 @@
+.especies {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    height:100vh; 
+    width:100vw;
+
+    background-size:cover; 
+    background-image:url('../../assets/especies2.png');
+
+    background-position: center;
+}
+
+.dalek {
+    cursor: pointer;
+    position: fixed;
+    top: 14vh;
+    left: 0.5vw;
+    height: 83vh;
+    width: 16vw;
+
+    &:hover{        
+        background: rgba(240, 248, 255, 0.11);
+    }
+
+    transition-property: background;
+    transition-duration: 0.15s;
+}
+
+.sontaran {
+    cursor: pointer;
+    position: fixed;
+    top: 14vh;
+    left: 17vw;
+    height: 83vh;
+    width: 16vw;
+
+    &:hover{        
+        background: rgba(240, 248, 255, 0.11);
+    }
+
+    transition-property: background;
+    transition-duration: 0.15s;
+}
+
+.senordeltiempo {
+    cursor: pointer;
+    position: fixed;
+    top: 14vh;
+    left: 33.5vw;
+    height: 83vh;
+    width: 16vw;
+
+    &:hover{        
+        background: rgba(240, 248, 255, 0.11);
+    }
+
+    transition-property: background;
+    transition-duration: 0.15s;
+}
+
+.humano {
+    cursor: pointer;
+    position: fixed;
+    top: 14vh;
+    left: 50vw;
+    height: 83vh;
+    width: 16vw;
+
+    &:hover{        
+        background: rgba(240, 248, 255, 0.11);
+    }
+
+    transition-property: background;
+    transition-duration: 0.15s;
+}
+
+.angel {
+    cursor: pointer;
+    position: fixed;
+    top: 14vh;
+    left: 66.5vw;
+    height: 83vh;
+    width: 16vw;
+
+    &:hover{        
+        background: rgba(240, 248, 255, 0.11);
+    }
+
+    transition-property: background;
+    transition-duration: 0.15s;
+}
+
+.cyberman {
+    cursor: pointer;
+    position: fixed;
+    top: 14vh;
+    left: 83vw;
+    height: 83vh;
+    width: 16vw;
+
+    &:hover{        
+        background: rgba(240, 248, 255, 0.11);
+    }
+
+    transition-property: background;
+    transition-duration: 0.15s;
+}
+
+.boton {
+    position: fixed;
+    top: 4vh;
+    left: 4vh;
+}

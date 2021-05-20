@@ -39,6 +39,18 @@ export class IndividuoFormComponent implements OnInit {
     this.tecnologiaService.findAll().subscribe(data => {
       this.fullTecnologias = data;
     });
+
+    if(this.route.snapshot.paramMap.get("id")) {
+      this.individuoService.showIndividuo(<string> this.route.snapshot.paramMap.get("id")).subscribe(data => {
+        this.nombreIndividuo = data.nombre;
+        this.organismoIndividuo = data.organismo;
+        this.especie = data.especie;
+        this.descripcionIndividuo = data.descripcion;
+        this.numCorazonesIndividuo = parseInt(data.numCorazones);
+        this.planetas = data.habita.map(p => parseInt(p.id));
+        this.tecnologias = data.esUsado.map(t => parseInt(t.id));
+      })
+    }
   }
 
     public goTo(path: string){
@@ -47,6 +59,7 @@ export class IndividuoFormComponent implements OnInit {
   
     public sendForm(){
       let data = {
+        "id": "",
         "nombre": this.nombreIndividuo,
         "numCorazones": this.numCorazonesIndividuo,
         "organismo": this.organismoIndividuo,
@@ -56,10 +69,22 @@ export class IndividuoFormComponent implements OnInit {
         "tecnologias": this.tecnologias
       }
       console.log(data)
-  
-      this.individuoService.createIndividuo(data).subscribe(data => {
-        this.goTo("individuo/" + this.especie)
-      });
+
+      if(this.route.snapshot.paramMap.get("id")) {
+
+        data['id'] = <string> this.route.snapshot.paramMap.get("id");
+
+        this.individuoService.updateIndividuo(data).subscribe(data => {
+          this.goTo("individuo/" + this.especie)
+        });
+
+      } else {
+        
+        this.individuoService.createIndividuo(data).subscribe(data => {
+          this.goTo("individuo/" + this.especie)
+        });
+
+      }
     }
   }
 

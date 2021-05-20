@@ -29,4 +29,16 @@ export class IndividuoService {
     return this.http.post<string>(this.usersUrl + "/createIndividuo", form);
     
   }
+
+  public updateIndividuo(form : any){
+    
+    return this.http.post<Individuo>(this.usersUrl + "/updateIndividuo", form);
+  }
+
+  public showIndividuo(id: string):  Observable<Individuo>{
+    let data = {
+      "id": id
+    }
+    return this.http.post<Individuo>(this.usersUrl + "/showIndividuo", data);
+  }
 }

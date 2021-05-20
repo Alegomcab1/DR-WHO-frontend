@@ -1,4 +1,4 @@
-<div class="image row-fluid">
+<div class="image row-fluid text-white">
   
     <div class="mb-3 col-4">
         <div class="drwho">
@@ -33,21 +33,23 @@
         <label for="description" class="form-label">Descripcion del individuo</label>
         <textarea name="textarea" class="form-control" [(ngModel)]="descripcionIndividuo" rows="5" cols="20"></textarea>
     </div>
-    <div>
+    <div class="mb-3 col-4">
         <label for="planeta" class="form-label">Planetas</label>
-        <select multiple>
-            <option *ngFor="let planeta of fullPlanetas">{{planeta.nombre}}</option>
+        <br>
+        <select multiple [(ngModel)]="planetas">
+            <option value="{{planeta.id}}" *ngFor="let planeta of fullPlanetas">{{planeta.nombre}}</option>
         </select>
     </div>
-    <div>
+    <div class="mb-3 col-4">
         <label for="tecnologia" class="form-label">Tecnología</label>
-        <select multiple>
-            <option *ngFor="let tecnologia of fullTecnologias">{{tecnologia.nombre}}</option>
+        <br>
+        <select multiple [(ngModel)]="tecnologias">
+            <option value="{{tecnologia.id}}" *ngFor="let tecnologia of fullTecnologias">{{tecnologia.nombre}}</option>
         </select>
     </div>
     <div class="col pb-2">
         <button class="btn btn-primary mr-4" (click)="sendForm()">Crear</button>
-        <button class="btn btn-primary" type="button" (click)="goTo('individuo')">Volver a lista de individuos</button>
+        <button class="btn btn-primary" type="button" (click)="goTo('individuo/' + especie)">Volver a lista de individuos</button>
     </div>
 
 </div>
