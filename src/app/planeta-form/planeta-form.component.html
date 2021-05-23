@@ -1,0 +1,22 @@
+ <div class="image row-fluid text-white">
+  
+    <div class="mb-3 col-4">
+        <div class="drwho">
+            Crear planeta
+        </div>
+    </div>
+
+    <div class="mb-3 col-4">
+        <label for="nombre" class="form-label">Nombre del planeta</label>
+        <input type="text" class="form-control" [(ngModel)]="nombrePlaneta">
+    </div>
+    <div class="mb-3 col-4">
+        <label for="description" class="form-label">Descripcion del planeta</label>
+        <textarea name="textarea" class="form-control" [(ngModel)]="descripcionPlaneta" rows="5" cols="20"></textarea>
+    </div>
+    <div class="col pb-2">
+        <button class="btn btn-primary mr-4" (click)="sendForm()">Crear</button>
+        <button class="btn btn-primary" type="button" (click)="goTo('planeta')">Volver a lista de planetas</button>
+    </div>
+
+</div>

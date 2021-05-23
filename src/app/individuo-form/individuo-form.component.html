@@ -1,0 +1,55 @@
+<div class="image row-fluid text-white">
+  
+    <div class="mb-3 col-4">
+        <div class="drwho">
+            Crear individuo
+        </div>
+    </div>
+
+    <div class="mb-3 col-4">
+        <label for="nombre" class="form-label">Nombre del individuo</label>
+        <input type="text" class="form-control" [(ngModel)]="nombreIndividuo">
+    </div>
+    <div class="mb-3 col-4">
+        <label for="especie" class="form-label">Especie: {{especie}}</label>
+    </div>
+    <div class="mb-3 col-4">
+        <label for="numCorazones" class="form-label">Número de corazones</label>
+        <select class="form-control" [(ngModel)]="numCorazonesIndividuo">
+            <option selected >0</option>
+            <option>1</option>
+            <option>2</option>
+        </select>
+    </div>
+    <div class="mb-3 col-4">
+        <label for="organismo" class="form-label">Organismo</label>
+        <select class="form-control" [(ngModel)]="organismoIndividuo">
+            <option selected value="ORGANICO">Orgánico</option>
+            <option value="NOORGANICO">No orgánico</option>
+            <option  value="MIXTO">Mixto</option>
+        </select>
+    </div>
+    <div class="mb-3 col-4">
+        <label for="description" class="form-label">Descripcion del individuo</label>
+        <textarea name="textarea" class="form-control" [(ngModel)]="descripcionIndividuo" rows="5" cols="20"></textarea>
+    </div>
+    <div class="mb-3 col-4">
+        <label for="planeta" class="form-label">Planetas</label>
+        <br>
+        <select multiple [(ngModel)]="planetas">
+            <option value="{{planeta.id}}" *ngFor="let planeta of fullPlanetas">{{planeta.nombre}}</option>
+        </select>
+    </div>
+    <div class="mb-3 col-4">
+        <label for="tecnologia" class="form-label">Tecnología</label>
+        <br>
+        <select multiple [(ngModel)]="tecnologias">
+            <option value="{{tecnologia.id}}" *ngFor="let tecnologia of fullTecnologias">{{tecnologia.nombre}}</option>
+        </select>
+    </div>
+    <div class="col pb-2">
+        <button class="btn btn-primary mr-4" (click)="sendForm()">Crear</button>
+        <button class="btn btn-primary" type="button" (click)="goTo('individuo/' + especie)">Volver a lista de individuos</button>
+    </div>
+
+</div>

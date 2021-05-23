@@ -1,0 +1,43 @@
+<div  class="card-body">
+  <div *ngIf="!isShow" class="mb-3 drwho">Lista de tecnologias</div>
+  <div *ngIf="isShow" class="mb-3 drwho">Detalles de tecnologia</div>
+  <table *ngIf="!isShow" class="table table-bordered table-striped tabla">
+    <thead class="thead-dark ">
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col"> </th>
+        <th scope="col"> </th>
+        <th scope="col"> </th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr *ngFor="let tecnologia of tecnologias">
+        <td class="sombra">{{ tecnologia.nombre }}</td>
+        <td class="sombra">{{ tecnologia.descripcion }}</td>
+        <td><button class="button btn btn-primary" type="button" (click)="showTecnologia(tecnologia.id)">Detalles</button></td>
+        <td><button class="button btn btn-primary" type="button" (click)="borrarTecnologia(tecnologia.id)">Borrar</button></td>
+        <td><button class="button btn btn-primary" type="button" (click)="goTo('createTecnologia/'+ tecnologia.id)">Actualizar</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <table *ngIf="isShow" class="table table-bordered table-striped tabla">
+    <thead class="thead-dark ">
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Descripcion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="sombra">{{ tecnolog.nombre }}</td>
+        <td class="sombra">{{ tecnolog.descripcion }}</td>
+      </tr>
+    <tbody >
+  </table>
+  <button class="btn btn-primary mr-4" type="button" (click)="goTo('createTecnologia')">Crear nuevo tecnologia</button>
+  <button *ngIf="!isShow" class="btn btn-primary" type="button" (click)="goTo('')">Volver</button>
+  <button *ngIf="isShow" class="btn btn-primary" type="button" (click)="isShow = false">Volver</button>
+
+  
+</div>

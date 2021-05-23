@@ -1,0 +1,27 @@
+<div class="card-body text-white">
+  <div class="mb-3 drwho">Lista de individuos</div>
+    <table class="table table-bordered table-striped tabla">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Número de corazones</th>
+          <th scope="col">Organismo</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let individuo of individuos">
+          <td class="sombra">{{ individuo.nombre }}</td>
+          <td class="sombra">{{ individuo.numCorazones }}</td>
+          <td class="sombra">{{ individuo.organismo }}</td>
+          <td><button class="button btn btn-primary" type="button"  (click)="goTo('showIndividuo/'+individuo.id)">Detalles</button></td>
+          <td><button class="button btn btn-primary" type="button" (click)="borrarIndividuo(individuo.id)">Borrar</button></td>
+          <td><button class="button btn btn-primary" type="button" (click)="goTo('createIndividuo/'+ especie +'/' +individuo.id)">Actualizar</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="btn btn-primary mr-4" type="button" (click)="goTo('createIndividuo/' + especie)">Crear nuevo individuo</button>
+    <button class="btn btn-primary" type="button" (click)="goTo('listEspecies')">Volver</button>
+</div>

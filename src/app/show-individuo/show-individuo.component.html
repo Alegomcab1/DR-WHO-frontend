@@ -1,0 +1,66 @@
+<div class="card-body text-white">
+    <div class="mb-3 drwho">Detalles del individuo</div>
+    <table class="table table-striped">
+        <tr>
+            <th class="bg-dark text-white">
+                Nombre
+            </th>
+            <th>
+                {{individuo.nombre}}
+            </th>
+        </tr>
+        <tr>
+            <th class="bg-dark text-white">
+                Especie
+            </th>
+            <th>
+                {{individuo.especie}}
+            </th>
+        </tr>
+        <tr>
+            <th class="bg-dark text-white">
+                Organismo
+            </th>
+            <th>
+                {{individuo.organismo}}
+            </th>
+        </tr>
+        <tr>
+            <th class="bg-dark text-white">
+                Número de corazones
+            </th>
+            <th>
+                {{individuo.numCorazones}}
+            </th>
+        </tr>
+        <tr>
+            <th class="bg-dark text-white">
+                Descripción
+            </th>
+            <th>
+                {{individuo.descripcion}}
+            </th>
+        </tr>
+        <tr>
+            <th class="bg-dark text-white">
+                Planetas
+            </th>
+            <th>
+                <ul>
+                    <li *ngFor="let p of individuo.habita">{{p.nombre}}</li>
+                </ul>
+            </th>
+        </tr>
+        <tr>
+            <th class="bg-dark text-white">
+                Tecnologías
+            </th>
+            <th>
+                <ul>
+                    <li *ngFor="let t of individuo.esUsado">{{t.nombre}}</li>
+                </ul>
+            </th>
+        </tr>
+    </table>
+    <button class="btn btn-primary" type="button" (click)="goTo('individuo/' + individuo.especie)">Volver a lista de individuos</button>
+</div>
